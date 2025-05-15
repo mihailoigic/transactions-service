@@ -7,6 +7,6 @@ async function bootstrap() {
 }
 
 bootstrap().catch((err) => {
-  console.error('❌ Failed to start Nest application', err);
+  console.error('Failed to start Nest application', err);
   process.exit(1);
 });

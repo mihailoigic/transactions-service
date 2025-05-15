@@ -1,11 +1,9 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { TypeOrmSetupModule } from './initializers/typeorm-setup.module';
+import { TransactionsModule } from './modules/transactions/transactions.module';
 
 @Module({
-  imports: [TypeOrmSetupModule],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [TypeOrmSetupModule, TransactionsModule],
+  providers: [],
 })
 export class AppModule {}
