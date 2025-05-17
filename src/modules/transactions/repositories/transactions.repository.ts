@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { DataSource, Repository } from 'typeorm';
-import { Transaction } from './transaction.entity';
-import { TransactionStatus } from './types/transaction-status.enum';
+import { TransactionStatus } from '../types/transaction-status.enum';
+import { Transaction } from '../entities/transaction.entity';
 
 interface FilterOptions {
   category?: string;

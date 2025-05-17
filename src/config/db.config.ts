@@ -5,5 +5,5 @@ export default registerAs('database', () => ({
   host: process.env.POSTGRES_HOST || 'localhost',
   username: process.env.POSTGRES_USER || 'developer',
   password: process.env.POSTGRES_PASSWORD || 'postgres',
-  database: process.env.POSTGRES_NAME || 'vcita-integration',
+  database: process.env.POSTGRES_NAME || 'transactions_db',
 }));

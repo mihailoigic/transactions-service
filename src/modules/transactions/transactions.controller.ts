@@ -8,17 +8,14 @@ import {
   Body,
   Query,
   ParseUUIDPipe,
-  UsePipes,
-  ValidationPipe,
 } from '@nestjs/common';
-import { TransactionsService } from './transactions.service';
+import { TransactionsService } from './services/transactions.service';
 import { CreateTransactionDto } from './dtos/create-transaction.dto';
 import { UpdateTransactionDto } from './dtos/update-transaction.dto';
 import { TransactionStatus } from './types/transaction-status.enum';
-import { Transaction } from './transaction.entity';
+import { Transaction } from './entities/transaction.entity';
 
 @Controller('transactions')
-@UsePipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }))
 export class TransactionsController {
   constructor(private readonly transactionsService: TransactionsService) {}
 

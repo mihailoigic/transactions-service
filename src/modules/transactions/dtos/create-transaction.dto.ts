@@ -6,7 +6,6 @@ import {
   IsNotEmpty,
   IsEnum,
 } from 'class-validator';
-
 import { TransactionStatus } from '../types/transaction-status.enum';
 
 export class CreateTransactionDto {

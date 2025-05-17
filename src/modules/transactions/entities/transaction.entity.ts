@@ -1,7 +1,7 @@
 import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
-import { TransactionStatus } from './types/transaction-status.enum';
+import { TransactionStatus } from '../types/transaction-status.enum';
 
-@Entity()
+@Entity({ name: 'transactions' })
 @Index('UX_TRANSACTIONS_CATEGORY', ['category'])
 @Index('UX_TRANSACTIONS_STATUS', ['status'])
 export class Transaction {

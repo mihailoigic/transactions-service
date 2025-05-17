@@ -1,11 +1,13 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { TransactionsRepository } from './transactions.repository';
-import { Transaction } from './transaction.entity';
-import { TransactionStatus } from './types/transaction-status.enum';
+import { TransactionsRepository } from '../repositories/transactions.repository';
+import { TransactionStatus } from '../types/transaction-status.enum';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Transaction } from '../entities/transaction.entity';
 
 @Injectable()
 export class TransactionsService {
   constructor(
+    @InjectRepository(TransactionsRepository)
     private readonly transactionsRepository: TransactionsRepository,
   ) {}
 

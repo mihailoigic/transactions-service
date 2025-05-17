@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import * as path from 'path';
 import { DataSource, DataSourceOptions } from 'typeorm';
 import dbConfig from '../config/db.config';
@@ -14,7 +15,7 @@ export const dataSourceOptions: DataSourceOptions = {
   entities: [path.join(__dirname, '/../**/*.entity.{js,ts}')],
   migrations: [path.join(__dirname, '/migrations/*.{js,ts}')],
   migrationsTableName: 'migrations',
-  synchronize: true,
+  synchronize: false,
 };
 
 export default new DataSource(dataSourceOptions);
