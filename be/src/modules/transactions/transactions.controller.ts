@@ -21,7 +21,7 @@ export class TransactionsController {
 
   @Get()
   async getTransactions(
-    @Query('category') category?: string,
+    @Query('categoryId') categoryId?: string,
     @Query('status') status?: TransactionStatus,
     @Query('fromDate') fromDate?: string,
     @Query('toDate') toDate?: string,
@@ -31,7 +31,7 @@ export class TransactionsController {
     @Query('order') order: 'ASC' | 'DESC' = 'DESC',
   ) {
     return this.transactionsService.filter({
-      category,
+      categoryId,
       status,
       fromDate,
       toDate,

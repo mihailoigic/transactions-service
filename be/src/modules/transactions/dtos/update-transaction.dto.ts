@@ -20,7 +20,7 @@ export class UpdateTransactionDto {
 
   @IsOptional()
   @IsString()
-  category?: string;
+  categoryId?: string;
 
   @IsOptional()
   @IsEnum(TransactionStatus, {

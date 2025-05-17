@@ -18,7 +18,7 @@ export class CreateTransactionDto {
 
   @IsString()
   @IsNotEmpty({ message: 'Category is required' })
-  category: string;
+  categoryId: string;
 
   @IsEnum(TransactionStatus, {
     message: 'Status must be either "pending" or "completed"',

@@ -12,7 +12,7 @@ export class TransactionsService {
   ) {}
 
   async filter(filters: {
-    category?: string;
+    categoryId?: string;
     status?: TransactionStatus;
     fromDate?: string;
     toDate?: string;
@@ -27,7 +27,7 @@ export class TransactionsService {
   async create(data: {
     amount: number;
     date: string;
-    category: string;
+    categoryId: string;
     status: TransactionStatus;
   }): Promise<Transaction> {
     const transaction = this.transactionsRepository.create(data);

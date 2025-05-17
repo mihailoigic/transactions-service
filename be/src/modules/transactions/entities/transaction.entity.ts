@@ -1,8 +1,15 @@
-import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  Index,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { TransactionStatus } from '../types/transaction-status.enum';
 
 @Entity({ name: 'transactions' })
-@Index('UX_TRANSACTIONS_CATEGORY', ['category'])
+@Index('UX_TRANSACTIONS_CATEGORY', ['categoryId'])
 @Index('UX_TRANSACTIONS_STATUS', ['status'])
 export class Transaction {
   @PrimaryGeneratedColumn('uuid')
@@ -14,9 +21,15 @@ export class Transaction {
   @Column({ type: 'date' })
   date: string;
 
-  @Column()
-  category: string;
-
   @Column({ type: 'enum', enum: TransactionStatus })
   status: TransactionStatus;
+
+  @Column()
+  categoryId: string;
+
+  @CreateDateColumn()
+  readonly createdAt: Date;
+
+  @UpdateDateColumn()
+  readonly updatedAt: Date;
 }
