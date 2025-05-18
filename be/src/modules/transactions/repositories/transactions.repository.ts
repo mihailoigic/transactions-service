@@ -37,10 +37,15 @@ export class TransactionsRepository extends Repository<Transaction> {
       order = 'DESC',
     } = options;
 
-    const query = this.createQueryBuilder('transaction');
+    const query = this.createQueryBuilder('transaction').leftJoinAndSelect(
+      'transaction.category',
+      'category',
+    );
 
     if (category) {
-      query.andWhere('transaction.category = :category', { category });
+      query.andWhere('transaction.category = :categoryId', {
+        categoryId: category,
+      });
     }
 
     if (status) {

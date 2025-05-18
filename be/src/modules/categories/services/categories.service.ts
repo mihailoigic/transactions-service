@@ -10,6 +10,10 @@ export class CategoriesService {
     private readonly categoriesRepository: CategoriesRepository,
   ) {}
 
+  async fetch() {
+    return this.categoriesRepository.find();
+  }
+
   async create(data: { name: string }): Promise<Category> {
     const category = this.categoriesRepository.create(data);
     return this.categoriesRepository.save(category);
