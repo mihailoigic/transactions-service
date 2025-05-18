@@ -12,7 +12,7 @@ Then, run the development server:
 npm run dev
 ```
 
-If your use port 3000 then open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 # Backend
 
