@@ -55,8 +55,6 @@ const TransactionsTable: React.FC<{
     setIsModalOpen(true);
   };
 
-  const handleEdit = (id: string) => {};
-
   const handleDelete = async (id: string) => {
     console.log("id", id);
     try {
@@ -121,10 +119,7 @@ const TransactionsTable: React.FC<{
               <Td>{transaction.category.name}</Td>
               <Td>{transaction.status}</Td>
               <Td>
-                <Button
-                  className="edit"
-                  onClick={() => handleEdit(transaction.id)}
-                >
+                <Button className="edit" onClick={() => {}}>
                   Edit
                 </Button>
                 <Button

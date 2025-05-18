@@ -2,6 +2,8 @@
 
 Run `npm i` to install all dependencies.
 
+Create .env out of .env.example for backend base api configuration.
+
 Then, run the development server:
 
 ```bash
